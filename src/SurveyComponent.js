@@ -8,7 +8,7 @@ import { json } from './Questions';
 StylesManager.applyTheme('defaultV2');
 
 function SurveyComponent() {
-  // const [test, setTest] = React.useState({});
+  const [result, setResult] = React.useState({});
   // const Data = ['Master','Diploma']
   // const Sec = {
   //   "elements": [
@@ -36,24 +36,21 @@ function SurveyComponent() {
   // })
 
   // console.log(editData)
-//  const handleComplete= (data)=>{
-// // setTest(data.valuesHash)
+ const handleComplete= (data)=>{
+    setResult(data.valuesHash)
 
-//    console.log(data.valuesHash)
-//    if (data.valuesHash.Study === 'Master'){
-//     return setTest({...data.valuesHash, Study:3})
-//    } else {
-//     return setTest({...data.valuesHash, Study:1})
-//    }
-//   }
-//   console.log('test', test)
+   console.log(data.valuesHash)
+  
+  }
+
+  console.log(result)
 
   const survey = new Model(json);
   return (
     <div className='App'>
       <Survey
         model={survey}
-        onComplete={(data)=> console.log(data.valuesHash)}
+        onComplete={handleComplete}
       />
     </div>
   );
