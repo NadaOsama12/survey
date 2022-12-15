@@ -52,6 +52,7 @@ export const json = {
      }
     ]
    }
-  ]
+  ],
+  "showCompletedPage": false
  }
 
